@@ -152,6 +152,9 @@ repositories {
 	maven {
 		url 'https://repository.hanbings.io/proxy'
 	}
+	maven {
+		url = 'https://meivi.net:448/awesome/maven'
+	}
 }
 
 dependencies {
@@ -178,6 +181,12 @@ dependencies {
 	// http://www.gradle.org/docs/current/userguide/dependency_management.html
 	// Apply Mixin AP
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+	implementation fg.deobf("com.mega:endinglib:1.4.1")
+	implementation fg.deobf("z1gned:goetyrevelation:2.2.7")
+	implementation fg.deobf("com.polarice3:goety:2.5.36.1")
+	implementation fg.deobf("top.theillusivec4:curios:5.14.1")
+	implementation fg.deobf("com.mega:revelationfix:3.8-all")
+	implementation fg.deobf("com.oblivioussp:spartanweaponry:3.2.1-all")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
