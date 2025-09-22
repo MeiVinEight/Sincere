@@ -1,20 +1,16 @@
 package org.mve.sincere.item;
 
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.TridentItem;
+import net.minecraft.world.item.ItemStack;
 
-public class ThrowableWeapon
+public interface ThrowableWeapon
 {
 	public static boolean throwable(Item item)
 	{
-		boolean ret = item instanceof TridentItem;
-		try
-		{
-			ret |= Class.forName("com.oblivioussp.spartanweaponry.item.ThrowingWeaponItem").isInstance(item);
-		}
-		catch (ClassNotFoundException ignored)
-		{
-		}
-		return ret;
+		return item instanceof ThrowableWeapon;
 	}
+
+	Entity drop(ItemStack stack, LivingEntity entity);
 }
