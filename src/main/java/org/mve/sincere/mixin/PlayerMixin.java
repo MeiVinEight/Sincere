@@ -5,6 +5,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import org.mve.sincere.Configuration;
 import org.mve.sincere.item.ThrowableWeapon;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,6 +23,10 @@ public class PlayerMixin
 	public void drop(ItemStack p_36179_, boolean p_36180_, boolean p_36181_, CallbackInfoReturnable<ItemEntity> cir)
 	{
 		if (!p_36181_ && !p_36180_)
+			return;
+		if (p_36181_ && !Configuration.SINCERE_DROP.get())
+			return;
+		if (p_36180_ && !Configuration.SINCERE_DEAD.get())
 			return;
 		if (p_36179_ == null)
 			return;

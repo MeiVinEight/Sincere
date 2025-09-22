@@ -1,3 +1,13 @@
 {
-	"enchantment.sincere.sincere": "召回"
+	"enchantment.sincere.sincere": "召回",
+	"sincere.config.save":"保存",
+	"sincere.config.done":"完成",
+	"sincere.config.reset": "重置默认值",
+	"sincere.config.title": "Sincere",
+	"sincere.config.throw.name": "投掷召回",
+	"sincere.config.drop.name": "丢弃召回",
+	"sincere.config.dead.name": "死亡召回",
+	"sincere.config.throw.tooltip": "召回在投掷时生效",
+	"sincere.config.drop.tooltip": "召回在丢弃时生效",
+	"sincere.config.dead.tooltip": "召回在死亡时生效"
 }

@@ -6,10 +6,11 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.mve.sincere.enchantment.SincereEnchantments;
-import org.mve.sincere.entity.SincereArrow;
+import org.mve.sincere.entity.ThrowingWeapon;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -41,14 +42,7 @@ public class GungnirSpearEntityMixin
 	)
 	public int tickLoyalty(int value)
 	{
-		GungnirSpearEntity trident = (GungnirSpearEntity) (Object) this;
-		if (!trident.getEntityData().get(ID_SINCERE))
-			return value;
-		if (!((SincereArrow) trident).callback())
-			return 0;
-		if (value == 0)
-			value = 1;
-		return value;
+		return ThrowingWeapon.loyalty((AbstractArrow) (Object) this, ID_SINCERE, value);
 	}
 
 	@Inject(method = "defineSynchedData", at = @At("RETURN"))

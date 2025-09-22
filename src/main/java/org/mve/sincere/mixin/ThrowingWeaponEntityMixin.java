@@ -9,7 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import org.mve.sincere.enchantment.SincereEnchantments;
-import org.mve.sincere.entity.SincereArrow;
 import org.mve.sincere.entity.ThrowingWeapon;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -47,14 +46,7 @@ public class ThrowingWeaponEntityMixin implements ThrowingWeapon
 	)
 	public int tickLoyalty(int value)
 	{
-		ThrowingWeaponEntity entity = (ThrowingWeaponEntity) (Object) this;
-		if (!entity.getEntityData().get(ID_SINCERE))
-			return value;
-		if (!((SincereArrow) entity).callback())
-			return 0;
-		if (value == 0)
-			value = 1;
-		return value;
+		return ThrowingWeapon.loyalty((AbstractArrow) (Object) this, ID_SINCERE, value);
 	}
 
 	@Inject(method = "readAdditionalSaveData", at = @At("TAIL"))

@@ -1,3 +1,13 @@
 {
-	"enchantment.sincere.sincere": "Sincere"
+	"enchantment.sincere.sincere": "Sincere",
+	"sincere.config.save":"SAVE",
+	"sincere.config.done":"DONE",
+	"sincere.config.reset": "Reset to default value",
+	"sincere.config.title": "Sincere",
+	"sincere.config.throw.name": "Sincere throw",
+	"sincere.config.drop.name": "Sincere drop",
+	"sincere.config.dead.name": "Sincere dead",
+	"sincere.config.throw.tooltip": "Sincere effects while throw",
+	"sincere.config.drop.tooltip": "Sincere effects while drop",
+	"sincere.config.dead.tooltip": "Sincere effects while dead"
 }
