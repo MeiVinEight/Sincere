@@ -21,7 +21,7 @@ public class PlayerMixin
 	)
 	public void drop(ItemStack p_36179_, boolean p_36180_, boolean p_36181_, CallbackInfoReturnable<ItemEntity> cir)
 	{
-		if (!p_36181_)
+		if (!p_36181_ && !p_36180_)
 			return;
 		if (p_36179_ == null)
 			return;
