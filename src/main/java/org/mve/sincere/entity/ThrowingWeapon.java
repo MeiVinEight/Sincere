@@ -13,7 +13,12 @@ public interface ThrowingWeapon
 
 	public static int loyalty(AbstractArrow arrow, EntityDataAccessor<Boolean> sincereID, int value)
 	{
-		if (!Configuration.SINCERE_THROW.get())
+		ThrowingType type = ((SincereArrow) arrow).type();
+		if (type == ThrowingType.THROW && !Configuration.SINCERE_THROW.get())
+			return value;
+		if (type == ThrowingType.DEAD && !Configuration.SINCERE_DEAD.get())
+			return value;
+		if (type == ThrowingType.DROP && !Configuration.SINCERE_DROP.get())
 			return value;
 		if (!arrow.getEntityData().get(sincereID))
 			return value;

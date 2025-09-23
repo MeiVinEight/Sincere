@@ -5,4 +5,8 @@ public interface SincereArrow
 	void callback(boolean value);
 
 	boolean callback();
+
+	void type(ThrowingType type);
+
+	ThrowingType type();
 }

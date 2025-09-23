@@ -1,11 +1,14 @@
 package org.mve.sincere.mixin;
 
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.mve.sincere.Configuration;
+import org.mve.sincere.entity.SincereArrow;
+import org.mve.sincere.entity.ThrowingType;
 import org.mve.sincere.item.ThrowableWeapon;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -39,9 +42,11 @@ public class PlayerMixin
 		int count = p_36179_.getCount();
 		ItemStack copy = p_36179_.copy();
 		copy.setCount(1);
+		ThrowingType type = p_36180_ ? ThrowingType.DEAD : ThrowingType.DROP;
 		while (count --> 0)
 		{
-			((ThrowableWeapon) item).drop(copy, player);
+			Entity entity = ((ThrowableWeapon) item).drop(copy, player);
+			((SincereArrow) entity).type(type);
 		}
 		cir.setReturnValue(null);
 	}

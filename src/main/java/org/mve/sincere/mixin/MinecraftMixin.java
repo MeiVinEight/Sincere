@@ -31,7 +31,6 @@ public class MinecraftMixin
 		if (mc.gameMode == null)
 			return;
 
-		System.out.println("Empty Click");
 		BlockHitResult resule;
 		if (mc.hitResult instanceof BlockHitResult)
 			resule = (BlockHitResult) mc.hitResult;

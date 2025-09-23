@@ -41,7 +41,6 @@ public class ServerPlayerGameModeMixin
 		if (p_9270_.getType() != HitResult.Type.MISS)
 			return;
 
-		System.out.println("Callback " + p_9266_.getUUID());
 		ServerLevel sl = (ServerLevel) p_9266_.level();
 		UUID uuid = p_9266_.getUUID();
 		Predicate<Projectile> pred = (proj) -> uuid.equals(((ProjectileAccessor) proj).owner());
