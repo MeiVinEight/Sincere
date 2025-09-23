@@ -155,6 +155,10 @@ repositories {
 	maven {
 		url = 'https://meivi.net:448/awesome/maven'
 	}
+	maven {
+		url = 'https://maven.tterrag.com'
+		allowInsecureProtocol = true
+	}
 }
 
 dependencies {
@@ -181,6 +185,7 @@ dependencies {
 	// http://www.gradle.org/docs/current/userguide/dependency_management.html
 	// Apply Mixin AP
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+	implementation fg.deobf("com.tterrag.registrate:Registrate:MC1.20-1.3.11")
 	implementation fg.deobf("com.mega:endinglib:1.4.1")
 	implementation fg.deobf("z1gned:goetyrevelation:2.2.7")
 	implementation fg.deobf("com.polarice3:goety:2.5.36.1")
@@ -190,6 +195,7 @@ dependencies {
 	implementation fg.deobf("dev.xkmc:l2complements:2.5.8")
 	implementation fg.deobf("dev.xkmc:l2library:2.5.3")
 	implementation fg.deobf("dev.xkmc:l2weaponry:2.5.4")
+	implementation fg.deobf("dev.xkmc:l2damagetracker:0.3.7")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
