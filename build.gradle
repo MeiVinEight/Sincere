@@ -187,6 +187,9 @@ dependencies {
 	implementation fg.deobf("top.theillusivec4:curios:5.14.1")
 	implementation fg.deobf("com.mega:revelationfix:3.8-all")
 	implementation fg.deobf("com.oblivioussp:spartanweaponry:3.2.1-all")
+	implementation fg.deobf("dev.xkmc:l2complements:2.5.8")
+	implementation fg.deobf("dev.xkmc:l2library:2.5.3")
+	implementation fg.deobf("dev.xkmc:l2weaponry:2.5.4")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
