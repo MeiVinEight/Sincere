@@ -1,0 +1,29 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "org.mve.sincere.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "sincere.refmap.json",
+	"client": [
+		"MinecraftMixin"
+	],
+	"mixins": [
+		"AbstractArrowMixin",
+		"BaseThrownWeaponEntityAccessor",
+		"BaseThrownWeaponEntityMixin",
+		"GungnirItemMixin",
+		"GungnirSpearEntityAccessor",
+		"GungnirSpearEntityMixin",
+		"PlayerMixin",
+		"ProjectileAccessor",
+		"ServerPlayerGameModeMixin",
+		"ThrowingWeaponEntityMixin",
+		"ThrowingWeaponItemMixin",
+		"ThrownTridentAccessor",
+		"ThrownTridentMixin",
+		"TridentItemMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
