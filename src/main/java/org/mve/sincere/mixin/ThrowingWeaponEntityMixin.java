@@ -53,12 +53,9 @@ public class ThrowingWeaponEntityMixin implements ThrowingWeapon
 	public void readAdditionalSaveData(CompoundTag tag, CallbackInfo info)
 	{
 		ThrowingWeaponEntity trident = (ThrowingWeaponEntity) (Object) this;
-		ItemStack item = trident.getEntityData().get(ThrowingWeaponEntityAccessor.weapon());
-		if (item == null)
-			return;
-		trident.getEntityData().set(ID_SINCERE, item.getEnchantmentLevel(SincereEnchantments.SINCERE.get()) > 0);
 		this.whole = tag.getBoolean(TAG_WHOLE);
 		this.origin = ItemStack.of(tag.getCompound(TAG_ORIGIN));
+		trident.getEntityData().set(ID_SINCERE, this.origin.getEnchantmentLevel(SincereEnchantments.SINCERE.get()) > 0);
 	}
 
 	@Inject(method = "addAdditionalSaveData", at = @At("RETURN"))
