@@ -17,6 +17,7 @@ import org.spongepowered.asm.mixin.Unique;
 public class TridentItemMixin implements ThrowableWeapon
 {
 	@Unique
+	@Override
 	public Entity drop(ItemStack stack, LivingEntity entity)
 	{
 		ThrownTrident trident = new ThrownTrident(entity.level(), entity, stack);

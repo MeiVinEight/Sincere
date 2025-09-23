@@ -9,6 +9,7 @@
 	],
 	"mixins": [
 		"AbstractArrowMixin",
+		"BaseThrowableWeaponItemMixin",
 		"BaseThrownWeaponEntityAccessor",
 		"BaseThrownWeaponEntityMixin",
 		"GungnirItemMixin",
